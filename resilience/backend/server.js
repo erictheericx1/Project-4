@@ -1,8 +1,9 @@
 /* Require modules
 --------------------------------------------------------------- */
 require('dotenv').config()
+const path = require('path');
 const express = require('express');
-const path = require('path')
+const cors = require('cors')
 
 
 /* Require the db connection, models, and seed data
@@ -12,7 +13,8 @@ const db = require('./models');
 
 /* Require the routes in the controllers folder
 --------------------------------------------------------------- */
-const commentsCtrl = require('./controllers/comments')
+const exercisesCtrl = require('./controllers/exercises')
+const commCtrl = require('./controllers/comments')
 
 
 /* Create the Express app
@@ -20,18 +22,48 @@ const commentsCtrl = require('./controllers/comments')
 const app = express();
 
 
-/* Middleware (app.use)
+/* Configure the app (app.set)
 --------------------------------------------------------------- */
 
+
+/* Middleware (app.use)
+--------------------------------------------------------------- */
+// cross origin allowance
+app.use(cors())
+// Body parser: used for POST/PUT/PATCH routes: 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
+// use the React build folder for static files
+app.use(express.static(path.join(path.dirname(__dirname), 'frontend')))
 
 
 /* Mount routes
 --------------------------------------------------------------- */
+// When a GET request is sent to `/seed`, the exercises collection is seeded
+app.get('/api/seed', function (req, res) {
+    // Remove any existing exercises
+    db.Exercise.deleteMany({})
+        .then(removedexercises => {
+            console.log(`Removed ${removedexercises.length} exercises`)
 
-app.use('/api/comments', commentsCtrl)
+            // Seed the exercises collection with the seed data
+            db.Exercise.insertMany(db.seedexercises)
+                .then(addedexercises => {
+                    console.log(`Added ${addedexercises.length} exercises to be adopted`)
+                    res.json(addedexercises)
+                })
+        })
+});
 
+
+app.use('/api/exercises', exercisesCtrl)
+
+app.use('/api/comments', commCtrl)
+
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'index.html'));
+});
 
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */

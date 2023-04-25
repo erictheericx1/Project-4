@@ -1,14 +1,6 @@
-/* 
----------------------------------------------------------------------------------------
-NOTE: Remember that all routes on this page are prefixed with `localhost:3000/api/comments`
----------------------------------------------------------------------------------------
-*/
-
-
 /* Require modules
 --------------------------------------------------------------- */
 const express = require('express')
-// Router allows us to handle routing outisde of server.js
 const router = express.Router()
 
 
@@ -16,41 +8,52 @@ const router = express.Router()
 --------------------------------------------------------------- */
 const db = require('../models')
 
-/* ROUTES
+
+/* Routes
 --------------------------------------------------------------- */
-//Index Route (GET/Read):
-router.get('/art/:artworkId', function (req, res) {
-  db.Comment.find({ artworkId: req.params.artworkId })
-      .then(comments => res.json(comments))
-})
+// Index Route (All Comments): 
+router.get('/', (req, res) => {
+    db.Exercise.find({}, { comments: true, _id: false })
+        .then(exercises => {
+            const flatList = []
+            for (let exercise of exercises) {
+                flatList.push(...exercise.comments)
+            }
+            res.json(flatList)
+        })
+});
 
-// Create Route (POST/Create):
-router.post('/', (req, res) => {
-  db.Comment.create(req.body)
-      .then(comment => res.json(comment))
-})
+// Create Route:
+router.post('/create/:exerciseId', (req, res) => {
+    db.Exercise.findByIdAndUpdate(
+        req.params.exerciseId,
+        { $push: { comments: req.body } },
+        { new: true }
+    )
+        .then(() => res.redirect('/comments'))
+});
 
-// Show Route (GET/Read):
-router.get('/:id', function (req, res) {
-  db.Comment.findById(req.params.id)
-      .then(comment => res.json(comment))
-})
+// Show Route:
+router.get('/:id', (req, res) => {
+    db.Exercise.findOne(
+        { 'comments._id': req.params.id },
+        { 'comments.$': true, _id: false }
+    )
+        .then(exercise => {
+            res.json(exercise.comments[0])
+        })
+});
 
-// Update Route (PUT/Update):
-router.put('/:id', (req, res) => {
-  db.Comment.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-  )
-      .then(comment => res.json(comment))
-})
-
-// Destroy Route (DELETE/Delete):
+// Destroy Route:
 router.delete('/:id', (req, res) => {
-  db.Comment.findByIdAndRemove(req.params.id)
-      .then(comment => res.json(comment))
-})
+    db.Exercise.findOneAndUpdate(
+        { 'comments._id': req.params.id },
+        { $pull: { comments: { _id: req.params.id } } },
+        { new: true }
+    )
+        .then(() => res.redirect('/comments'))
+});
+
 
 /* Export these routes so that they are accessible in `server.js`
 --------------------------------------------------------------- */
