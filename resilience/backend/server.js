@@ -1,6 +1,7 @@
 /* Require modules
 --------------------------------------------------------------- */
 require('dotenv').config()
+
 const path = require('path');
 const express = require('express');
 const cors = require('cors')
@@ -40,25 +41,25 @@ app.use(express.static(path.join(path.dirname(__dirname), 'frontend')))
 /* Mount routes
 --------------------------------------------------------------- */
 // When a GET request is sent to `/seed`, the exercises collection is seeded
-app.get('/api/seed', function (req, res) {
+app.get('/seed', function (req, res) {
     // Remove any existing exercises
     db.Exercise.deleteMany({})
-        .then(removedexercises => {
-            console.log(`Removed ${removedexercises.length} exercises`)
+        .then(removedExercises => {
+            console.log(`Removed ${removedExercises.length} exercises`)
 
             // Seed the exercises collection with the seed data
-            db.Exercise.insertMany(db.seedexercises)
-                .then(addedexercises => {
-                    console.log(`Added ${addedexercises.length} exercises to be adopted`)
-                    res.json(addedexercises)
+            db.Exercise.insertMany(db.seedExercises)
+                .then(addedExercises => {
+                    console.log(`Added ${addedExercises.length} exercises to be adopted`)
+                    res.json(addedExercises)
                 })
         })
 });
 
 
-app.use('/api/exercises', exercisesCtrl)
+app.use('/exercises', exercisesCtrl)
 
-app.use('/api/comments', commCtrl)
+app.use('/comments', commCtrl)
 
 
 app.get('*', (req, res) => {
