@@ -1,13 +1,13 @@
 // Require the Mongoose package
 const mongoose = require('mongoose');
-const commentSchema = require('./comment.js')
+// const commentSchema = require('./comment.js')
 
 // Create a schema to define the properties of the excercises collection
 const excerciseSchema = new mongoose.Schema({
     target: { type: String, required: true },
     name: { type: String, default: 'Unknown' },
     type: { type: String, required: true },
-    muscle: { type: String, maxLength: 2, required: true },
+    muscle: { type: String, required: true },
     equipment: { type: String, required: true },
     difficulty: { type: String, required: true },
     photo: { type: String, required: true },
