@@ -6,7 +6,7 @@ const exercises = [
     muscle: 'LB',
     equipment: 'None',
     difficulty: 'Beginner',
-    photo: 'https://example.com/superman.jpg',
+    photo: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/04/lying-back-extension.gif',
     instructions: '1. Lie face down on the ground with your arms extended above your head.\n2. Simultaneously lift your arms, legs, and chest off the ground as high as you can. Hold for a few seconds, then lower back down.'
   },
   {
@@ -16,7 +16,7 @@ const exercises = [
     muscle: 'LB',
     equipment: 'Roman chair',
     difficulty: 'Intermediate',
-    photo: 'https://example.com/back-extension.jpg',
+    photo: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/05/back-extension.gif',
     instructions: '1. Position your hips against the back pad of the roman chair.\n2. Cross your arms over your chest and lower your upper body forward, keeping your back straight.\n3. Slowly raise your upper body back up to the starting position.'
   },
   {

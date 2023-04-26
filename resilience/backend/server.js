@@ -23,10 +23,6 @@ const commCtrl = require('./controllers/comments')
 const app = express();
 
 
-/* Configure the app (app.set)
---------------------------------------------------------------- */
-
-
 /* Middleware (app.use)
 --------------------------------------------------------------- */
 // cross origin allowance
@@ -57,7 +53,7 @@ app.get('/seed', function (req, res) {
 });
 
 
-app.use('/exercises', exercisesCtrl)
+app.use('/api/exercises', exercisesCtrl)
 
 app.use('/comments', commCtrl)
 

@@ -1,21 +1,18 @@
-import { deleteExercise } from "../../../utils/backend"
+import { Link } from 'react-router-dom'
 
-export default function exercise({ exerciseData, setExercises, exercises }) {
-    function handleDelete() {
-        deleteExercise(exerciseData._id)
-        setExercises([...exercises.filter(exercise => exercise.name !== exerciseData.name)])
-    }
 
+export default function Card({ exerciseData, updateDetailPage }) {
     return (
-        <li>
-            <h3 className="inline mr-2">
-                {exerciseData.name}
-            </h3>
-            <button
-                className="border-2 border-black rounded"
-                onClick={handleDelete}>
-                Delete
-            </button>
-        </li>
+        <Link
+            to={"/details/" + exerciseData.target}
+            onClick={() => { updateDetailPage(exerciseData) }}
+        >
+            <figure>
+                <img src={exerciseData.photo} />
+                <figcaption>
+                    <h2 className="font-bold">{exerciseData.difficulty}</h2>
+                </figcaption>
+            </figure>
+        </Link>
     )
 }

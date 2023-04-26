@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getExercises } from "../../../utils/backend"
-// import Card from '../Card'
-// import './styles.css'
+import Card from '../Card'
+import './styles.css'
 
 
 function App() {
@@ -14,8 +14,12 @@ useEffect(() => {
 console.log(exercises)
 
 return (
-  <ul>
-      {exercises.length > 0 && exercises.map}
+  <ul className="exercise-list">
+    {exercises.map(exercise => (
+      <li key={exercise.id}>
+        <Card exercise={exercise} />
+      </li>
+    ))}
   </ul>
 )
 }
