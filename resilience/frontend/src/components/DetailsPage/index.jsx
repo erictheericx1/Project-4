@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import CommentSection from '../CommentSection'
 import { getExercise } from '../../../utils/api'
-import './styles.css'
+// import './styles.css'
 
 export default function DetailsPage({ exerciseData, updateExercise }) {
     // On component mount check if exerciseData is defined. If not defined, use the URL to query the API
@@ -10,7 +10,7 @@ export default function DetailsPage({ exerciseData, updateExercise }) {
 
     useEffect(() => {
         if (!exerciseData) {
-          getExercise(`https://exercisedb.p.rapidapi.com/exercises/${id}`)
+            getExercise(`/api/exercises/${id}`)
                 .then(res => updateExercise(res.data))
         }
     }, [])

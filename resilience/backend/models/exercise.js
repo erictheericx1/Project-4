@@ -11,6 +11,7 @@ const excerciseSchema = new mongoose.Schema({
     equipment: { type: String, required: true },
     difficulty: { type: String, required: true },
     photo: { type: String, required: true },
+    gif: { type: String, required: true },
     instructions: { type: String, required: true },
     
     // the comments array can only accept objects that match the criteria specified

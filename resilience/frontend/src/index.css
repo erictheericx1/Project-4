@@ -1,22 +1,25 @@
 * {
-  margin: 0;
-  padding: 0;
+
   box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
-  background: linear-gradient(0deg, rgb(204, 204, 204) 0%, rgb(53, 53, 53) 72%);
-  overflow: overlay;
+  background: linear-gradient(0deg, rgb(224, 255, 223) 0%, rgb(68, 80, 64) 72%);
+  /* overflow: overlay;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center; */
 }
 
 *::-webkit-scrollbar {
-  background-color: #57575763;
+  background-color: #49484863;
   width: 10px;
 }
 
 /* Style scrollbar thumb */
 *::-webkit-scrollbar-thumb {
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   border-radius: 20px;
 }

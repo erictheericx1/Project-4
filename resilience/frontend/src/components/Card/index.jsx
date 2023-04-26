@@ -1,18 +1,17 @@
 import { Link } from 'react-router-dom'
+import './styles.css'
 
-
-export default function Card({ exerciseData, updateDetailPage }) {
+export default function Card({ exercise, updateDetailPage }) {
     return (
-        <Link
-            to={"/details/" + exerciseData.target}
-            onClick={() => { updateDetailPage(exerciseData) }}
-        >
-            <figure>
-                <img src={exerciseData.photo} />
-                <figcaption>
-                    <h2 className="font-bold">{exerciseData.difficulty}</h2>
-                </figcaption>
-            </figure>
-        </Link>
+        <figure>
+            <img src={exercise.photo} alt={exercise.name} />
+            <figcaption>
+            <h3>{exercise.name}</h3>
+            <h4>{exercise.difficulty}</h4>
+            </figcaption>
+            <Link to={"/details/" + exercise.name} onClick={() => { updateDetailPage(exercise) }}>
+              <button className="button is-primary">Learn More</button>
+            </Link>
+        </figure>
     )
 }

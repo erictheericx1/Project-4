@@ -6,7 +6,8 @@ const exercises = [
     muscle: 'LB',
     equipment: 'None',
     difficulty: 'Beginner',
-    photo: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/04/lying-back-extension.gif',
+    photo: 'https://media.istockphoto.com/id/1162990494/vector/woman-doing-exercise-with-superman-position-in-2-step-for-guide.jpg?s=612x612&w=0&k=20&c=UIGYSx79-4nUBZNw31hEIbHRH3_TCC3Sj4a9sEXROzk=',
+    gif: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/04/lying-back-extension.gif',
     instructions: '1. Lie face down on the ground with your arms extended above your head.\n2. Simultaneously lift your arms, legs, and chest off the ground as high as you can. Hold for a few seconds, then lower back down.'
   },
   {
@@ -16,18 +17,9 @@ const exercises = [
     muscle: 'LB',
     equipment: 'Roman chair',
     difficulty: 'Intermediate',
-    photo: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/05/back-extension.gif',
+    photo: 'https://media.istockphoto.com/id/1312067031/vector/woman-doing-back-extensions-hyperextensions-outdoor-equipment-flat-vector-illustration.jpg?s=612x612&w=0&k=20&c=Ngyqef4Qddg3chVbKeo2nBPrJa8dKdbBSpkTNG8y8GQ=',
+    gif: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/05/back-extension.gif',
     instructions: '1. Position your hips against the back pad of the roman chair.\n2. Cross your arms over your chest and lower your upper body forward, keeping your back straight.\n3. Slowly raise your upper body back up to the starting position.'
-  },
-  {
-    target: 'Lower back',
-    name: 'Deadlift',
-    type: 'Compound',
-    muscle: 'LB, H',
-    equipment: 'Barbell',
-    difficulty: 'Advanced',
-    photo: 'https://example.com/deadlift.jpg',
-    instructions: '1. Stand with your feet shoulder-width apart and grip the bar with your hands just outside your knees.\n2. Keeping your back straight, lift the bar by pushing your hips forward and standing up.\n3. Lower the bar back down to the ground.'
   },
   {
     target: 'Knee',
@@ -36,7 +28,8 @@ const exercises = [
     muscle: 'Q, H',
     equipment: 'Box or step',
     difficulty: 'Beginner',
-    photo: 'https://example.com/step-ups.jpg',
+    photo: 'https://img.freepik.com/premium-vector/step-up-exercise-woman-workout-fitness-aerobic-exercises_476141-783.jpg',
+    gif: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/07/dumbbell-step-up.gif',
     instructions: '1. Stand in front of a box or step.\n2. Step up onto the box with your right foot, then step down with your left foot.\n3. Repeat, alternating legs.'
   },
   {
@@ -46,18 +39,9 @@ const exercises = [
     muscle: 'Q, H',
     equipment: 'None',
     difficulty: 'Beginner',
-    photo: 'https://example.com/lunges.jpg',
+    photo: 'https://img.freepik.com/premium-vector/sportswoman-showing-dynamic-lunges-semi-flat-color-vector-character_151150-11597.jpg?w=2000',
+    gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/06/Bodyweight-Walking-Lunge.gif',
     instructions: '1. Stand with your feet shoulder-width apart.\n2. Take a big step forward with your right foot, then lower your body until your right knee is bent at least 90 degrees.\n3. Push back up to the starting position and repeat with your left leg.'
-  },
-  {
-    target: 'Knee',
-    name: 'Wall Sit',
-    type: 'Isometric',
-    muscle: 'Q',
-    equipment: 'Wall',
-    difficulty: 'Beginner',
-    photo: 'https://example.com/wall-sit.jpg',
-    instructions: '1. Stand with your back against a wall and your feet shoulder-width apart.\n2. Slide your back down the wall until your knees are bent at a 90-degree angle and your thighs are parallel to the ground.\n3. Hold this position for as long as you can.'
   },
   {
     target: 'Arthritis',
@@ -66,7 +50,8 @@ const exercises = [
     muscle: 'Full Body',
     equipment: 'Pool',
     difficulty: 'Beginner',
-    photo: 'https://example.com/water-aerobics.jpg',
+    photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyymW1VDMr-rpsd4iI1iuAm8YcdAecj8vNaA&usqp=CAU',
+    gif: 'https://i.pinimg.com/originals/9a/8d/0d/9a8d0d316945f36869a666763fbd5bc9.gif',
     instructions: '1. Stand in chest-deep water with your feet shoulder-width apart.\n2. Move your arms and legs in a controlled manner to increase your heart rate.\n3. Repeat for 30 minutes.'
   },
   {
@@ -76,18 +61,9 @@ const exercises = [
     muscle: 'Full Body',
     equipment: 'Mat',
     difficulty: 'Beginner',
-    photo: 'https://example.com/yoga.jpg',
+    photo: 'https://img.freepik.com/free-vector/girl-doing-yoga-cartoon-character_1308-118683.jpg',
+    gif: 'https://s3.eu-west-2.amazonaws.com/img.creativepool.com/files/candidate/portfolio/full/1799361.gif',
     instructions: '1. Choose a pose that is comfortable for you, such as child\'s pose or downward-facing dog.\n2. Hold the pose for 30 seconds.\n3. Repeat 3-5 times.'
-  },
-  {
-    target: 'Arthritis',
-    name: 'Resistance Band Rows',
-    type: 'Strength Training',
-    muscle: 'Back',
-    equipment: 'Resistance Band',
-    difficulty: 'Intermediate',
-    photo: 'https://example.com/resistance-band-rows.jpg',
-    instructions: '1. Attach a resistance band to a sturdy anchor, such as a doorknob or bedpost.\n2. Stand with your feet shoulder-width apart and grasp the resistance band handles.\n3. Pull the resistance band towards your chest, squeezing your shoulder blades together.\n4. Release and repeat for 10-15 repetitions.'
   },
   {
     target: 'Balance Issues',
@@ -96,7 +72,8 @@ const exercises = [
     muscle: 'Legs',
     equipment: 'None',
     difficulty: 'Beginner',
-    photo: 'https://example.com/single-leg-balance.jpg',
+    photo: 'https://lirp.cdn-website.com/1029fcf4/dms3rep/multi/opt/Single-Leg-Stand-354x400-640w.jpg',
+    gif: 'https://thumbs.gfycat.com/UnacceptableOrganicDove-size_restricted.gif',
     instructions: '1. Stand with your feet hip-width apart.\n2. Shift your weight onto your left foot.\n3. Lift your right foot off the ground and balance on your left foot for 30 seconds.\n4. Repeat on the other side.'
   },
   {
@@ -106,18 +83,9 @@ const exercises = [
     muscle: 'Legs',
     equipment: 'None',
     difficulty: 'Intermediate',
-    photo: 'https://example.com/heel-to-toe-walk.jpg',
+    photo: 'https://www.saebo.com/wp-content/uploads/2015/11/intermediate-heel-toe-1.png',
+    gif: 'https://workouttrends.com/wp-content/uploads/2014/05/heel-to-toe-walk.jpg',
     instructions: '1. Stand with your feet touching heel-to-toe.\n2. Take a step forward with your right foot, placing it in front of your left foot.\n3. Take a step forward with your left foot, placing it in front of your right foot.\n4. Repeat for 10-15 steps.'
-  },
-  {
-    target: 'Balance Issues',
-    name: 'Standing Leg Swings',
-    type: 'Balance',
-    muscle: 'Legs',
-    equipment: 'None',
-    difficulty: 'Beginner',
-    photo: 'https://example.com/standing-leg-swings.jpg',
-    instructions: '1. Stand with your feet hip-width apart.\n2. Shift your weight onto your left foot.\n3. Swing your right leg forward and backward, keeping your toes pointed.\n4. Repeat for 10-15 swings.\n5. Repeat on the other side.'
   },
   {
     target: 'Hip Pain/Injury',
@@ -126,7 +94,8 @@ const exercises = [
     muscle: 'Hip abductors',
     equipment: 'Resistance band',
     difficulty: 'Beginner',
-    photo: 'https://example.com/clamshells.jpg',
+    photo: 'https://thumbs.dreamstime.com/b/woman-doing-clamshells-illustrations-glute-exercises-workouts-flat-vector-illustration-woman-doing-clamshells-illustrations-151446317.jpg',
+    gif: 'https://www.spotebi.com/wp-content/uploads/2015/05/clamshell-exercise-illustration.gif',
     instructions: '1. Lie on your side with your knees bent and a resistance band looped around your thighs.\n2. Keeping your feet together, lift your top knee up as high as you can while keeping your hips stacked.\n3. Lower your knee back down.\n4. Repeat for 10-15 reps on each side.'
   },
   {
@@ -136,19 +105,10 @@ const exercises = [
     muscle: 'Glutes, hamstrings',
     equipment: 'None',
     difficulty: 'Beginner',
-    photo: 'https://example.com/hip-bridges.jpg',
+    photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkp-bq5w4uBZxAC2OVtN_YX0hMwhCuEyHK6g&usqp=CAU',
+    gif: 'https://www.spotebi.com/wp-content/uploads/2015/01/glute-bridge-exercise-illustration-spotebi.gif',
     instructions: '1. Lie on your back with your knees bent and feet flat on the ground.\n2. Lift your hips up towards the ceiling, squeezing your glutes.\n3. Lower your hips back down to the ground.\n4. Repeat for 10-15 reps.'
   },
-  {
-    target: 'Hip Pain/Injury',
-    name: 'Seated Hip Flexor Stretch',
-    type: 'Stretch',
-    muscle: 'Hip flexors',
-    equipment: 'Chair',
-    difficulty: 'Beginner',
-    photo: 'https://example.com/seated-hip-flexor-stretch.jpg',
-    instructions: '1. Sit on the edge of a chair.\n2. Extend one leg out in front of you with your heel on the ground.\n3. Keep your other foot on the ground and lean forward slightly, feeling a stretch in your hip flexor.\n4. Hold for 30 seconds.\n5. Repeat on the other side.'
-  } 
 ]
 
 // Export the seed data to `models/index.js`
