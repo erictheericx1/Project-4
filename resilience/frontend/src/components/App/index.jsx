@@ -15,14 +15,7 @@ console.log(exercises)
 
 return (
   <ul>
-      {exercises.length > 0 && exercises.map(exercise => {
-          return <exercise
-              key={exercise._id}
-              exerciseData={exercise.name}
-              exercises={exercises}
-              setExercises={setExercises}
-          />
-      })}
+      {exercises.length > 0 && exercises.map}
   </ul>
 )
 }

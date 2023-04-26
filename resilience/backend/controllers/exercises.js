@@ -17,6 +17,11 @@ router.get('/', function (req, res) {
         .then(exercises => res.json(exercises))
 })
 
+// New Route:
+router.get('/new', (req, res) => {
+    res.render('new-form')
+})
+
 // Create Route (POST/Create):
 router.post('/', (req, res) => {
     db.Exercise.create(req.body)
@@ -29,18 +34,26 @@ router.get('/:id', function (req, res) {
         .then(exercise => res.json(exercise))
 })
 
+// Edit Route:
+router.get('/:id/edit', (req, res) => {
+    db.Exercise.findById(req.params.id)
+        .then(exercise => {
+            res.render('edit-form', {
+                exercise: exercise
+            })
+        })
+})
+
 // Update Route (PUT/Update):
 router.put('/:id', (req, res) => {
-    db.Exercise.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        { new: true }
-    )
+    db.Exercise.findByIdAndUpdate(req.params.id, req.body,
+        { new: true })
         .then(exercise => res.redirect('/exercises/' + exercise._id))
 })
 
 // Destroy Route (DELETE/Delete):
 router.delete('/:id', (req, res) => {
+    console.log(req.params.id)
     db.Exercise.findByIdAndRemove(req.params.id)
         .then(exercise => res.json(exercise))
 })
