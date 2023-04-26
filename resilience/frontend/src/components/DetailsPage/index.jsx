@@ -24,7 +24,7 @@ export default function DetailsPage({ exerciseData, updateExercise }) {
                         <figure className="h-[85vh] mx-10 w-[40vw]">
                             <img
                                 className="h-[70vh] w-full object-cover"
-                                src={exerciseData.gifurl}
+                                src={exerciseData.gif}
                             />
                             <figcaption>
                                 <p className="mt-1 text-lg leading-normal text-gray-900 text-center">{exerciseData.id}</p>
