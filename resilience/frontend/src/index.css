@@ -1,16 +1,15 @@
 * {
-
   box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
   background: linear-gradient(0deg, rgb(224, 255, 223) 0%, rgb(68, 80, 64) 72%);
-  /* overflow: overlay;
+  /* overflow: overlay; */
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center; */
+  text-align: center;
 }
 
 *::-webkit-scrollbar {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { getExercises } from "../../../utils/backend"
+// import Card from '../Card'
 import HomePage from '../HomePage'
 import DetailsPage from '../DetailsPage'
 
@@ -11,12 +12,19 @@ import './styles.css'
 function App() {
   const [exercises, setExercises] = useState([])
   const [detailPage, setDetailPage] = useState(null)
-
+console.log(exercises)
   useEffect(() => {
     getExercises().then(data => setExercises(data))
   }, [])
 
-  let galleryContent = <p>loading exercises...</p>
+  // let galleryContent
+  // if (exercises.length > 0) {
+  //   galleryContent = exercises
+  // }
+  // else {
+  //   galleryContent = <p>Loading your art</p>
+  // }
+
 
   return (
     <div>
@@ -63,7 +71,7 @@ function App() {
 
 
       <Routes>
-          <Route path="/" element={<HomePage galleryContent={galleryContent} />} />
+          <Route path="/" element={<HomePage galleryContent={exercises} />} />
           <Route path="/details/:id" element={<DetailsPage exerciseData={detailPage} updateWorkOut={setDetailPage} />}/>
       </Routes>
     </div>

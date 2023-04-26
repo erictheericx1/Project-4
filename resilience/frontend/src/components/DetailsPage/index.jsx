@@ -7,6 +7,7 @@ import { getExercise } from '../../../utils/api'
 export default function DetailsPage({ exerciseData, updateExercise }) {
     // On component mount check if exerciseData is defined. If not defined, use the URL to query the API
     const { id } = useParams()
+console.log(exerciseData)
 
     useEffect(() => {
         if (!exerciseData) {
