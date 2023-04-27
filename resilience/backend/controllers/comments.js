@@ -1,14 +1,6 @@
-/* 
----------------------------------------------------------------------------------------
-NOTE: Remember that all routes on this page are prefixed with `localhost:3000/api/comments`
----------------------------------------------------------------------------------------
-*/
-
-
 /* Require modules
 --------------------------------------------------------------- */
 const express = require('express')
-// Router allows us to handle routing outisde of server.js
 const router = express.Router()
 
 
@@ -16,41 +8,44 @@ const router = express.Router()
 --------------------------------------------------------------- */
 const db = require('../models')
 
-/* ROUTES
+
+/* Routes
 --------------------------------------------------------------- */
-//Index Route (GET/Read):
-router.get('/art/:artworkId', function (req, res) {
-  db.Comment.find({ artworkId: req.params.artworkId })
-      .then(comments => res.json(comments))
+// Index Route (All Comments): 
+router.get('/exercise/:exerciseId', function (req, res) {
+    db.comment.find({ exerciseId: req.params.exerciseId })
+        .then(comments => res.json(comments))
 })
 
-// Create Route (POST/Create):
+// Create Route:
 router.post('/', (req, res) => {
-  db.Comment.create(req.body)
-      .then(comment => res.json(comment))
+    db.comment.create(req.body)
+        .then(comment => res.json(comment))
 })
 
-// Show Route (GET/Read):
+// Show Route:
 router.get('/:id', function (req, res) {
-  db.Comment.findById(req.params.id)
-      .then(comment => res.json(comment))
+    db.comment.findById(req.params.id)
+        .then(comment => res.json(comment))
 })
 
-// Update Route (PUT/Update):
+// Update Route:
 router.put('/:id', (req, res) => {
-  db.Comment.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-  )
-      .then(comment => res.json(comment))
+    db.comment.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true }
+    )
+        .then(comment => res.json(comment))
 })
 
-// Destroy Route (DELETE/Delete):
+// Destroy Route:
 router.delete('/:id', (req, res) => {
-  db.Comment.findByIdAndRemove(req.params.id)
-      .then(comment => res.json(comment))
+    db.comment.findByIdAndRemove(req.params.id)
+        .then(comment => res.json(comment))
 })
+
+
 
 /* Export these routes so that they are accessible in `server.js`
 --------------------------------------------------------------- */
