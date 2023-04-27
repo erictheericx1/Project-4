@@ -21,46 +21,41 @@ function App() {
 
   return (
     <div>
-      <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="navbar-brand">
-          <h1 className="text ">RESILIENCE</h1>
+  <nav className="navbar" role="navigation" aria-label="main navigation">
+    <div className="navbar-brand">
+      <h1 className="navbar-item is-size-4 has-text-weight-bold">RESILIENCE</h1>
 
-          <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+      <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" className="navbar-menu">
+      <div className="navbar-end">
+        <a className="navbar-item" href="/">
+          Home
+        </a>
+
+        <a className="navbar-item" href="/about">
+          About
+        </a>
+
+        <div className="navbar-item has-dropdown is-hoverable">
+          <a className="navbar-link">
+            More
           </a>
-        </div>
 
-        <div id="navbarBasicExample" className="navbar-menu">
-          <div className="navbar-start">
-            <a className="navbar-item">
-              Home
+          <div className="navbar-dropdown">
+            <a className="navbar-item" href="/nutrition">
+              Nutrition
             </a>
-
-            <a className="navbar-item">
-              About
-            </a>
-
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">
-                More
-              </a>
-
-              <div className="navbar-dropdown">
-                <a className="navbar-item">
-                  Nutrition
-                </a>
-              </div>
-            </div>
-
-          <div className="navbar-end">
-            <div className="navbar-item">
-            </div>
-          </div>
           </div>
         </div>
-      </nav>
+      </div>
+    </div>
+  </nav>
 
 
       <Routes>

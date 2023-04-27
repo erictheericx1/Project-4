@@ -41,7 +41,7 @@ export default function DetailsPage({ exerciseData, updateWorkout }) {
                     </div>
                 </div>
             </div>
-            {/* <CommentSection exerciseId={exerciseData.id} /> */}
+            <CommentSection exerciseId={exerciseData._id} />
         </div>
     }
     return page

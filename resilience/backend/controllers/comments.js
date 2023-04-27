@@ -13,6 +13,7 @@ const db = require('../models')
 --------------------------------------------------------------- */
 // Index Route (All Comments): 
 router.get('/exercise/:exerciseId', function (req, res) {
+    console.log(req.params.exerciseId)
     db.comment.find({ exerciseId: req.params.exerciseId })
         .then(comments => res.json(comments))
 })

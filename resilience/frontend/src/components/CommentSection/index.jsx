@@ -8,13 +8,16 @@ export default function commentSection({ exerciseId }) {
     const [showCreateForm, setShowCreateForm] = useState(false)
     const [createFormData, setCreateFormData] = useState({
         name: '',
-        content: ''
+        didithelp: '',
+        content: '',
+        exerciseId: exerciseId
     })
 
     // Query the database for all comments that pertain to this exercise
     useEffect(() => {
         getComments(exerciseId)
             .then(comments => setComments(comments))
+
     }, [])
 
 
@@ -44,6 +47,7 @@ export default function commentSection({ exerciseId }) {
         // clear the form
         setCreateFormData({
             name: '',
+            didithelp: '',
             content: ''
         })
         // close the form
@@ -60,7 +64,7 @@ export default function commentSection({ exerciseId }) {
         commentElements = comments.map(comment => {
             return <Comment
                 key={comment._id}
-                data={comment}
+                workoutData={comment}
                 refreshComments={refreshComments}
             />
         })
@@ -73,36 +77,41 @@ export default function commentSection({ exerciseId }) {
     }
 
     return (
-        <div className='comment-section bg-gray-300 rounded-lg p-4 pb-10 mt-4 space-y-4 relative'>
-            <h1 className='text-xl font-bold'>Viewer Insights</h1>
+        <div>
+            <h1>People Insights</h1>
             <button
-                onClick={toggleCreateForm}
-                className="top-0 right-5 absolute text-white hover:bg-green-800 font-bold py-2 px-4 bg-green-900 rounded cursor-pointer mr-2"
-            >
+                onClick={toggleCreateForm}>
                 {btnText}
             </button>
             {
                 showCreateForm && <form
-                    onSubmit={handleSubmit}
-                    className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[80vw] mx-auto text-right">
+                    onSubmit={handleSubmit}>
                     <input
                         name="name"
-                        className="px-2 py-1 w-full bg-gray-100"
                         placeholder="Your name"
                         value={createFormData.name}
                         onChange={handleInputChange}
                     />
                     <br />
+                    <select
+                        name="didithelp"
+                        placeholder="Did this help you?"
+                        value={createFormData.didithelp}
+                        onChange={handleInputChange}
+                        >
+                            <option value="">--Select an option--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    <br />
                     <textarea
                         name="content"
-                        className="p-2 my-2 h-[100px] w-full bg-gray-100"
                         placeholder="Share your thoughts!"
                         value={createFormData.content}
                         onChange={handleInputChange}
                     />
                     <button
-                        type="submit"
-                        className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-gray-700 rounded cursor-pointer mr-2">
+                        type="submit">
                         Post
                     </button>
                 </form>

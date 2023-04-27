@@ -5,6 +5,7 @@ export default function Comment({ workoutData, refreshComments }) {
     const [showEditForm, setShowEditForm] = useState(false)
     const [editFormData, setEditFormData] = useState({
         name: workoutData.name,
+        didithelp: workoutData.didithelp,
         content: workoutData.content
     })
 
@@ -35,19 +36,18 @@ export default function Comment({ workoutData, refreshComments }) {
 
 
     //  Default JSX of each comment
-    let commentElement = <div
-        className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[80vw] mx-auto">
-        <p className="font-bold">{workoutData.name}</p>
-        <p className="my-2">{workoutData.content}</p>
-        <div className="flex justify-end">
+    let commentElement = 
+    <div>
+        <p>{workoutData.name}</p>
+        <p>{workoutData.didithelp}</p>
+        <p>{workoutData.content}</p>
+        <div>
             <button
-                onClick={() => { setShowEditForm(true) }}
-                className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-gray-700 rounded cursor-pointer mr-2">
+                onClick={() => { setShowEditForm(true) }}>
                 Edit
             </button>
             <button
-                onClick={handleDelete}
-                className="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">
+                onClick={handleDelete}>
                 Delete
             </button>
         </div>
@@ -56,32 +56,36 @@ export default function Comment({ workoutData, refreshComments }) {
     // Change the comment to a form if the showEditForm state variable is true
     if (showEditForm) {
         commentElement = <form
-            onSubmit={handleSubmit}
-            className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[80vw] mx-auto text-right">
+            onSubmit={handleSubmit}>
             <input
                 name="name"
-                className="px-2 py-1 w-full bg-gray-100"
                 placeholder="Your name"
                 value={editFormData.name}
                 onChange={handleInputChange}
             />
             <br />
+            <select
+                        name="didithelp"
+                        placeholder="Did this help you?"
+                        value={editFormData.didithelp}
+                        onChange={handleInputChange}
+                        >
+                            <option value="">--Select an option--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+            <br />
             <textarea
                 name="content"
-                className="p-2 my-2 h-[100px] w-full bg-gray-100"
-                placeholder="Share your thoughts!"
+                placeholder="tell us your experience!"
                 value={editFormData.content}
                 onChange={handleInputChange}
             />
             <div>
-                <button
-                    onClick={() => { setShowEditForm(false) }}
-                    className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-gray-700 rounded cursor-pointer mr-2">
+                <button onClick={() => { setShowEditForm(false) }}>
                     Close
                 </button>
-                <button
-                    type="submit"
-                    className="text-white hover:bg-green-800 font-bold py-2 px-4 bg-green-900 rounded cursor-pointer mr-2">
+                <button type="submit">
                     Post
                 </button>
             </div>
