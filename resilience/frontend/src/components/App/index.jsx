@@ -11,19 +11,12 @@ import './styles.css'
 
 function App() {
   const [exercises, setExercises] = useState([])
-  const [detailPage, setDetailPage] = useState(null)
-console.log(exercises)
+  const [detailPage, setDetailPage] = useState()
+
+
   useEffect(() => {
     getExercises().then(data => setExercises(data))
   }, [])
-
-  // let galleryContent
-  // if (exercises.length > 0) {
-  //   galleryContent = exercises
-  // }
-  // else {
-  //   galleryContent = <p>Loading your art</p>
-  // }
 
 
   return (
@@ -72,7 +65,7 @@ console.log(exercises)
 
       <Routes>
           <Route path="/" element={<HomePage galleryContent={exercises} />} />
-          <Route path="/details/:id" element={<DetailsPage exerciseData={detailPage} updateWorkOut={setDetailPage} />}/>
+          <Route path="/details/:id" element={<DetailsPage exerciseData={detailPage} updateWorkout={setDetailPage} />}/>
       </Routes>
     </div>
 

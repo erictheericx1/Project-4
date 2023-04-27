@@ -9,7 +9,7 @@ export default function Card({ exerciseData, updateDetailPage }) {
             <h3>{exerciseData.name}</h3>
             <h4>{exerciseData.difficulty}</h4>
             </figcaption>
-            <Link to={"/details/" + exerciseData.name} onClick={() => { updateDetailPage(exerciseData) }}>
+            <Link to={"/details/" + exerciseData._id} onClick={() => { updateDetailPage(exerciseData) }}>
                 <button className="button is-primary">Learn More</button>
             </Link>
         </figure>
