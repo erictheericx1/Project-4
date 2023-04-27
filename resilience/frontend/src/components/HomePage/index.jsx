@@ -10,6 +10,7 @@ export default function HomePage(props) {
           </div>
         </div>
       </section>
+      
       <section className="section">
         <div className="container">
           <div className="columns is-multiline">

@@ -53,7 +53,6 @@ router.put('/:id', (req, res) => {
 
 // Destroy Route (DELETE/Delete):
 router.delete('/:id', (req, res) => {
-    console.log(req.params.id)
     db.Exercise.findByIdAndRemove(req.params.id)
         .then(exercise => res.json(exercise))
 })

@@ -78,45 +78,67 @@ export default function commentSection({ exerciseId }) {
 
     return (
         <div>
-            <h1>People Insights</h1>
-            <button
+            <h1 className="title">People Insights</h1>
+                <button className="button is-primary" 
                 onClick={toggleCreateForm}>
                 {btnText}
-            </button>
-            {
-                showCreateForm && <form
-                    onSubmit={handleSubmit}>
-                    <input
+                </button>
+                { showCreateForm && (
+
+        <form onSubmit={handleSubmit}>
+            <div className="field">
+                <label className="label">Name</label>
+                    <div className="control">
+                        <input
+                        className="input"
+                        type="text"
                         name="name"
                         placeholder="Your name"
                         value={createFormData.name}
-                        onChange={handleInputChange}
-                    />
-                    <br />
-                    <select
+                        onChange={handleInputChange}/>
+                    </div>
+            </div>
+            <div className="field">
+                <label className="label">Did this help you?</label>
+                    <div className="control">
+                        <div className="select">
+                        <select
                         name="didithelp"
-                        placeholder="Did this help you?"
                         value={createFormData.didithelp}
-                        onChange={handleInputChange}
-                        >
-                            <option value="">--Select an option--</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
+                        onChange={handleInputChange}>
+
+                        <option value="">--Select an option--</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+
                         </select>
-                    <br />
+                        </div>
+                    </div>
+            </div>
+            <div className="field">
+                <label className="label">Share your thoughts!</label>
+                    <div className="control">
                     <textarea
-                        name="content"
-                        placeholder="Share your thoughts!"
-                        value={createFormData.content}
-                        onChange={handleInputChange}
-                    />
-                    <button
-                        type="submit">
+                    className="textarea"
+                    name="content"
+                    placeholder="Write your comment here"
+                    value={createFormData.content}
+                    onChange={handleInputChange}/>
+                    </div>
+            </div>
+            <div className="field">
+                <div className="control">
+                    <button className="button is-primary" type="submit">
                         Post
                     </button>
-                </form>
-            }
+                </div>
+            </div>
+        </form>
+    )}
+
+        <div className="container">
             {commentElements}
         </div>
+    </div>
     )
 }
