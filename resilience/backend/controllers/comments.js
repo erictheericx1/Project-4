@@ -12,47 +12,39 @@ const db = require('../models')
 /* Routes
 --------------------------------------------------------------- */
 // Index Route (All Comments): 
-router.get('/', (req, res) => {
-    db.Exercise.find({}, { comments: true, _id: false })
-        .then(exercises => {
-            const flatList = []
-            for (let exercise of exercises) {
-                flatList.push(...exercise.comments)
-            }
-            res.json(flatList)
-        })
-});
+router.get('/exercise/:exerciseId', function (req, res) {
+    db.comment.find({ exerciseId: req.params.exerciseId })
+        .then(comments => res.json(comments))
+})
 
 // Create Route:
-router.post('/create/:exerciseId', (req, res) => {
-    db.Exercise.findByIdAndUpdate(
-        req.params.exerciseId,
-        { $push: { comments: req.body } },
-        { new: true }
-    )
-        .then(() => res.redirect('/comments'))
-});
+router.post('/', (req, res) => {
+    db.comment.create(req.body)
+        .then(comment => res.json(comment))
+})
 
 // Show Route:
-router.get('/:id', (req, res) => {
-    db.Exercise.findOne(
-        { 'comments._id': req.params.id },
-        { 'comments.$': true, _id: false }
+router.get('/:id', function (req, res) {
+    db.comment.findById(req.params.id)
+        .then(comment => res.json(comment))
+})
+
+// Update Route:
+router.put('/:id', (req, res) => {
+    db.comment.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true }
     )
-        .then(exercise => {
-            res.json(exercise.comments[0])
-        })
-});
+        .then(comment => res.json(comment))
+})
 
 // Destroy Route:
 router.delete('/:id', (req, res) => {
-    db.Exercise.findOneAndUpdate(
-        { 'comments._id': req.params.id },
-        { $pull: { comments: { _id: req.params.id } } },
-        { new: true }
-    )
-        .then(() => res.redirect('/comments'))
-});
+    db.comment.findByIdAndRemove(req.params.id)
+        .then(comment => res.json(comment))
+})
+
 
 
 /* Export these routes so that they are accessible in `server.js`

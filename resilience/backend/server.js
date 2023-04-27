@@ -15,7 +15,7 @@ const db = require('./models');
 /* Require the routes in the controllers folder
 --------------------------------------------------------------- */
 const exercisesCtrl = require('./controllers/exercises')
-const commCtrl = require('./controllers/comments')
+const commentsCtrl = require('./controllers/comments')
 
 
 /* Create the Express app
@@ -55,7 +55,7 @@ app.get('/seed', function (req, res) {
 
 app.use('/api/exercises', exercisesCtrl)
 
-app.use('/comments', commCtrl)
+app.use('/api/comments', commentsCtrl)
 
 
 app.get('*', (req, res) => {
