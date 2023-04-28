@@ -31,7 +31,7 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 // use the React build folder for static files
-app.use(express.static(path.join(path.dirname(__dirname), 'frontend')))
+app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
 
 
 /* Mount routes
@@ -59,7 +59,7 @@ app.use('/api/comments', commentsCtrl)
 
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'index.html'));
+    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
 });
 
 /* Tell the app to listen on the specified port
