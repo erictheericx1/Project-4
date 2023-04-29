@@ -74,7 +74,7 @@ I used [figma.com](https://www.figma.com/file/7wBGaHA0XFB88nwxCfr6TY/project-4?n
 - **Unsolved Problems:** - I would have like to implement JWT and have a user profile page where users can see all the exercises they've saved and all the comments they've made.
 
 
-## next steps:
+## Next Steps:
 - **Future enhancement one:** - us API or add more exercises to the database
 - **Future enhancement two:** - add a search page or search bar so users can search for exercises by name.
 - **Future enhancement three:** - add a user profile page so users can see all the exercises they've saved and all the comments they've made.

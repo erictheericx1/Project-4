@@ -2,7 +2,7 @@ import Card from '../Card'
 
 export default function HomePage(props) {
   return (
-    <>
+    <div className="container" style={{ padding: '20px', backgroundColor: "#f2f2f2", border: "1px solid #ccc" }}>
       <section className="hero is-primary">
         <div className="hero-body">
           <div className="container">
@@ -22,6 +22,6 @@ export default function HomePage(props) {
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }
