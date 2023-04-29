@@ -35,7 +35,8 @@ If you would like to run this app locally, please follow these steps:
 - Node.js
 - HTML
 - CSS
-- Bulma
+- Bulma*
+
 
 ### Workflow/ Project Management:
 - Trello
@@ -65,6 +66,12 @@ I used [figma.com](https://www.figma.com/file/7wBGaHA0XFB88nwxCfr6TY/project-4?n
 
 ## Launch the App!
 [Click to Checkout Resilience!](https://resilience.herokuapp.com)
+
+
+## Unsolved Problems/ Major Hurdles:
+- **Major Hurdles:** - I had a hard time figuring out how to get the comments to show up and implement CRUD on the details page.  With help, I was able to get it to work.  I was also having technical issues with the VITE update where is was giving me errors or wasn't recognizing defined veriables.  This issue was also fixed.
+
+- **Unsolved Problems:** - I would have like to implement JWT and have a user profile page where users can see all the exercises they've saved and all the comments they've made.
 
 
 ## next steps:
