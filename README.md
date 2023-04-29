@@ -79,6 +79,7 @@ I used [figma.com](https://www.figma.com/file/7wBGaHA0XFB88nwxCfr6TY/project-4?n
 - **Future enhancement two:** - add a search page or search bar so users can search for exercises by name.
 - **Future enhancement three:** - add a user profile page so users can see all the exercises they've saved and all the comments they've made.
 - **Future enhancement four:** - sort exercises by difficulty level, body part, or equipment needed.
+- **Future enhancement five:** - add the disclaimer to a modal that pops up when the user first visits the app.
 
 
 
