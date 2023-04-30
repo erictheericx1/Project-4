@@ -10,15 +10,16 @@ Resilience is an app designed for people who have limitations physically.  Wheth
 
 |       **URL**           | **REST Route** | **HTTP Verb** | **CRUD Action** |   **EJS View(s)**         | **Created Yet?**  |
 | ---------------         | -------------- | ------------- | --------------- | ------------------------  | ----------------- |
-| /                       | N/A            | GET           | read            | homepage.jsx              | YES               |
-| /exercise/:id           | show           | GET           | read            | detailspage.jsx           | YES               |
-| /                       | Create         | POST          | create          | detailspage.jsx           | YES               |
-| /exercise/comment/:id   | Show           | GET           | read            | detailspage.jsx           | YES               |
-| /exercise/comment/:id   | update         | PUT           | update          | detailspage.jsx           | YES               |
-| /exercise/comment/:id   | destroy	       | DELETE	       | delete		       | detailspage.jsx           | YES               |
+| /                       | N/A            | GET           | read            | HomePage.jsx              | YES               |
+| /about                  | N/A            | GET           | read            | AboutPage.jsx             | YES               |
+| /exercise/:id           | show           | GET           | read            | DetailsPage.jsx           | YES               |
+| /exercise/comment/:id   | Create         | POST          | create          | DetailsPage.jsx           | YES               |
+| /exercise/comment/:id   | Show           | GET           | read            | DetailsPage.jsx           | YES               |
+| /exercise/comment/:id   | update         | PUT           | update          | DetailsPage.jsx           | YES               |
+| /exercise/comment/:id   | destroy	       | DELETE	       | delete		       | DetailsPage.jsx           | YES               |
 
 
-## Installation Instructions
+## Installation Instructions:
 If you would like to run this app locally, please follow these steps:
 - Fork and clone this repository
 - Initialize NPM
@@ -33,6 +34,9 @@ If you would like to run this app locally, please follow these steps:
 - JavaScript
 - Express
 - Node.js
+- Mongoose/MongoDB
+- JSX
+- Postman
 - HTML
 - CSS
 - Bulma*
@@ -80,7 +84,3 @@ I used [figma.com](https://www.figma.com/file/7wBGaHA0XFB88nwxCfr6TY/project-4?n
 - **Future enhancement three:** - add a user profile page so users can see all the exercises they've saved and all the comments they've made.
 - **Future enhancement four:** - sort exercises by difficulty level, body part, or equipment needed.
 - **Future enhancement five:** - add the disclaimer to a modal that pops up when the user first visits the app.
-
-
-
-

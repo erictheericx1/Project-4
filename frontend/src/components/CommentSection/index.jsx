@@ -78,8 +78,8 @@ export default function commentSection({ exerciseId }) {
 
     return (
         <div>
-            <h1 className="title">People Insights</h1>
-                <button className="button is-primary" 
+            <h1 className="title has-text-light">People Insights</h1>
+                <button className="button is-warning mb-2" 
                 onClick={toggleCreateForm}>
                 {btnText}
                 </button>
@@ -128,7 +128,7 @@ export default function commentSection({ exerciseId }) {
             </div>
             <div className="field">
                 <div className="control">
-                    <button className="button is-primary" type="submit">
+                    <button className="button is-primary is-outlined" type="submit">
                         Post
                     </button>
                 </div>

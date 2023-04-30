@@ -2,7 +2,7 @@ import Card from '../Card'
 
 export default function HomePage(props) {
   return (
-    <div className="container" style={{ padding: '20px', backgroundColor: "#f2f2f2", border: "1px solid #ccc" }}>
+    <div className="container" style={{ padding: '20px', backgroundColor: "gray" }}>
       <section className="hero is-primary">
         <div className="hero-body">
           <div className="container">

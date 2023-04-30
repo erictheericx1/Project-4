@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import CommentSection from '../CommentSection'
 import { getExercise } from '../../../utils/api'
@@ -19,8 +19,8 @@ export default function DetailsPage({ exerciseData, updateWorkout }) {
     let page = <p>...Loading your workouts...</p>
     if (exerciseData) {
         page = 
-        <div className="container" style={{ padding: '20px', backgroundColor: "#f2f2f2", border: "1px solid #ccc" }}>
-            <section className="hero is-primary">
+        <div className="container" style={{ padding: '20px', backgroundColor: "gray" }}>
+            <section className="hero is-primary mb-5">
                 <div className="hero-body">
                     <div className="container">
                         <h1 className="title">Exercise Details</h1>

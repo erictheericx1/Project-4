@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@600&display=swap');
+
 * {
   box-sizing: border-box;
+  font-family: 'Alkatra', cursive;
 }
 
 body {
-  background-color: #48494963;
+  background-color: gray;
   min-height: 100vh;
   max-width: 1280px;
   margin: 0 auto;

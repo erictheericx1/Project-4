@@ -45,7 +45,7 @@ export default function Comment({ workoutData, refreshComments }) {
                 <div className="field is-grouped">
                     <div className="control">
                         <button
-                            className="button is-info"
+                            className="button is-link"
                             onClick={() => {
                             setShowEditForm(true)}}>
                             Edit
@@ -108,7 +108,7 @@ export default function Comment({ workoutData, refreshComments }) {
             <div className="field is-grouped">
                 <div className="control">
                     <button
-                    className="button is-danger"
+                    className="button is-dark"
                     onClick={() => {
                     setShowEditForm(false)}}>
                     Close
