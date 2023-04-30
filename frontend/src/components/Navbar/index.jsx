@@ -1,4 +1,9 @@
+import React from "react"
+
+
 export default function Navbar() {
+// found help with this navbar at https://bulma.io/documentation/components/navbar/ and https://dev.to/eclecticcoding/bulma-navbar-toogle-with-react-hooks-18ek
+const [isActive, setIsActive] = React.useState(false);
 
 
   return (
@@ -6,14 +11,18 @@ export default function Navbar() {
     <div className="navbar-brand">
       <h1 className="navbar-item is-size-4 has-text-weight-bold has-text-primary">RESILIENCE</h1>
 
-      <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a 
+        onClick={() => {
+          setIsActive(!isActive);
+        }}
+      role="button" className={`navbar-burger burger ${isActive ? "is-active" : ""}`} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div id="navbarBasicExample" className="navbar-menu">
+    <div id="navbarBasicExample" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
       <div className="navbar-end">
         <a className="navbar-item has-text-primary" href="/">
           Home
