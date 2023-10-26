@@ -19,16 +19,16 @@ export default function DetailsPage({ exerciseData, updateWorkout }) {
     let page = <p>...Loading your workouts...</p>
     if (exerciseData) {
         page = 
-        <div className="container" style={{ padding: '20px', backgroundColor: "gray" }}>
-            <section className="hero is-primary mb-5">
+        <div className="container">
+            <section className="hero">
                 <div className="hero-body">
                     <div className="container">
-                        <h1 className="title">Exercise Details</h1>
+                        <h1 className="page has-text-centered is-italic">Exercise Details</h1>
                     </div>
                 </div>
             </section>
 
-        <div className="columns is-centered">
+        <div className="columns">
             <div className="column is-full">
                 <div className="box">
                     <div className="columns is-vcentered">

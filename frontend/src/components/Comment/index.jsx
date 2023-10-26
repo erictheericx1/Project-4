@@ -39,9 +39,9 @@ export default function Comment({ workoutData, refreshComments }) {
     let commentElement = 
         <div className="box">
             <div className="content">
-                        <p>{workoutData.name}</p>
-                        <p>{workoutData.didithelp}</p>
-                        <p>{workoutData.content}</p>
+                        <p> Name: {workoutData.name}</p>
+                        <p>Did It Help: {workoutData.didithelp}</p>
+                        <p>Thoughts: {workoutData.content}</p>
                 <div className="field is-grouped">
                     <div className="control">
                         <button

@@ -77,7 +77,7 @@ export default function commentSection({ exerciseId }) {
     }
 
     return (
-        <div>
+        <div className="has-background-black-tar">
             <h1 className="title has-text-light">People Insights</h1>
                 <button className="button is-warning mb-2" 
                 onClick={toggleCreateForm}>
