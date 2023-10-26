@@ -1,10 +1,12 @@
+/* Google Font fonts */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@900&display=swap');
 
+/* Font  */
+@import 'font-awesome/css/font-awesome.min.css';
 
 * {
   font-family: 'Ubuntu', sans-serif;
-;
 }
 
 /* Navbar */
@@ -17,11 +19,18 @@
   padding: 10px 20px;
 }
 
-#feature {
-  color: #4e5e4c;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
+/* Footer */
+li {
+  list-style: none;
+}
+
+.hero {
+  background: url(https://c1.wallpaperflare.com/preview/485/581/97/various-fitness-healthy-sport.jpg)
+  no-repeat center center/cover ; 
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -35,12 +44,14 @@ h1 {
   font-size: 3rem;
   color: #333;
   margin-bottom: 2rem;
-  text-shadow: 2px 2px 2px #236b41;
+  text-shadow: 2px 2px 2px #3f1a5e;
+}
+
+strong {
+  color: #3f1a5e;
 }
 
 .main {
-  background: url(https://c4.wallpaperflare.com/wallpaper/1009/536/63/dumbbells-fitness-gym-wallpaper-preview.jpg)
-  no-repeat center center/cover;
   min-height: 20vh; 
 }
 
@@ -54,6 +65,24 @@ h1 {
   font-weight: bold;
   color: #ffffff;
   margin-bottom: 2rem;
+}
+
+#features {
+  color: rgb(42, 42, 44);
+  font-size: 1.5rem;
+   text-decoration: none;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background-color: #3f1a5e;
+  color: #ffffff;
+ 
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* Scrollbar */

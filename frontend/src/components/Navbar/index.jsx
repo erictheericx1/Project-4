@@ -31,7 +31,7 @@ const [isActive, setIsActive] = React.useState(false);
           </a>
 
           <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link has-background-primary">
+            <a className="navbar-link has-background-grey-light">
               Login
             </a>
 

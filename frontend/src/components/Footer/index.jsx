@@ -22,9 +22,9 @@ function Footer() {
           <div className="column">
             <h4>Connect With Us</h4>
             <ul className="social-icons">
-              <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
+              <li><a href="#"><i className="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i className="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i className="fa fa-linkedin"></i></a></li>
             </ul>
           </div>
         </div>
