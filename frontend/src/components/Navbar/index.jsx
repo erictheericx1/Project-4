@@ -1,46 +1,44 @@
-import React from "react"
+import React, { useState } from 'react'
 
 
 export default function Navbar() {
 // found help with this navbar at https://bulma.io/documentation/components/navbar/ and https://dev.to/eclecticcoding/bulma-navbar-toogle-with-react-hooks-18ek
-const [isActive, setIsActive] = React.useState(false);
+const [isActive, setIsActive] = useState(false);
 
 
   return (
-    <nav className="navbar has-background-black-ter" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-        <a 
+    <nav className={`navbar ${isActive ? 'is-active' : ''}`} aria-label='main navigation'>
+      <div className='navbar-brand'>
+        <a
           onClick={() => {
-            setIsActive(!isActive);
+            setIsActive(!isActive)
           }}
-        role="button" className={`navbar-burger burger ${isActive ? "is-active" : ""}`} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+          role='button' 
+          className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
+          aria-label='menu'
+          aria-expanded='false'
+          data-target='navbarBasicExample'
+        >
+          <span aria-hidden='true'></span>
+          <span aria-hidden='true'></span>
+          <span aria-hidden='true'></span>
         </a>
       </div>
 
-      <div id="navbarBasicExample" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
-        <div className="navbar-end">
-          <a className="navbar-item has-text-grey-lighter" href="/">
+      <div id='navbarBasicExample' className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
+       <div className='navbar-end'>
+          <a className='navbar-item' href='/'>
             Home
           </a>
 
-          <a className="navbar-item has-text-grey-lighter" href="/about">
+          <a className='navbar-item' href='/about'>
             About
           </a>
 
-          <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link has-background-grey-light">
-              Login
-            </a>
+          <a className='navbar-item'>
+            Login (coming soon...)
+          </a>
 
-            <div className="navbar-dropdown">
-              <a className="navbar-item " href="/nutrition">
-                coming soon...
-              </a>
-            </div>
-          </div>
         </div>
     </div>
   </nav>
